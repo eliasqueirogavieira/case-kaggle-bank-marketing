@@ -1,0 +1,873 @@
+{
+  "ablation": {
+    "F0 com ajuste do mês, ajustado (modelo final)": {
+      "group_auc": 0.61710846768994,
+      "pr_auc": 0.45140365439240987,
+      "roc_auc": 0.7977674843820075
+    },
+    "F0 com ajuste do mês, padrão": {
+      "group_auc": 0.5982417620960229,
+      "pr_auc": 0.4472911114416852,
+      "roc_auc": 0.7926435867134403
+    },
+    "F0 sem ajuste do mês, mesmos hiperparâmetros": {
+      "group_auc": 0.6073273401351234,
+      "pr_auc": 0.3867427271437624,
+      "roc_auc": 0.7557399156913411
+    },
+    "F0 sem ajuste do mês, padrão": {
+      "group_auc": 0.6022272652509459,
+      "pr_auc": 0.38633669773518264,
+      "roc_auc": 0.750405340043879
+    },
+    "F1 = F0 + dia e mês": {
+      "group_auc": 0.6316501818864738,
+      "pr_auc": 0.4459266935030991,
+      "roc_auc": 0.7955758170521838
+    },
+    "F2 = F1 + campaign": {
+      "group_auc": 0.6341353216638571,
+      "pr_auc": 0.4477304677113806,
+      "roc_auc": 0.7979476885957724
+    },
+    "F3 = F2 + duration (vazamento)": {
+      "group_auc": 0.9378622101958708,
+      "pr_auc": 0.6316881650389786,
+      "roc_auc": 0.9369139170656033
+    }
+  },
+  "cv": {
+    "best_C": 0.1,
+    "c_scores": {
+      "0.01": 0.5934165295067608,
+      "0.1": 0.6028794737564274,
+      "1.0": 0.6023078933376779,
+      "10.0": 0.6022110906769298
+    },
+    "lgbm_minus_logistic_group_auc": {
+      "folds_won": 4,
+      "mean": 0.014228993933512579,
+      "se": 0.007186546465677361
+    },
+    "mean": {
+      "Dummy (taxa média)": {
+        "brier": 0.10329710707848663,
+        "capture_at_20_within_month": 0.19995630216249777,
+        "gini": 0.0,
+        "group_auc": 0.5,
+        "ks": 0.0,
+        "lift_at_20_within_month": 1.0,
+        "pr_auc": 0.11698186142744749,
+        "roc_auc": 0.5
+      },
+      "LightGBM ajustado": {
+        "brier": 0.08119006675992949,
+        "capture_at_20_within_month": 0.30796860564752243,
+        "gini": 0.5955349687640151,
+        "group_auc": 0.61710846768994,
+        "ks": 0.4876227933740914,
+        "lift_at_20_within_month": 1.540115175011379,
+        "pr_auc": 0.45140365439240987,
+        "roc_auc": 0.7977674843820075
+      },
+      "LightGBM padrão": {
+        "brier": 0.08187439289686098,
+        "capture_at_20_within_month": 0.30017501160634624,
+        "gini": 0.5852871734268804,
+        "group_auc": 0.5982417620960229,
+        "ks": 0.4749493587715444,
+        "lift_at_20_within_month": 1.5013363175030856,
+        "pr_auc": 0.4472911114416852,
+        "roc_auc": 0.7926435867134403
+      },
+      "Logística + efeito do mês": {
+        "brier": 0.08091504621145736,
+        "capture_at_20_within_month": 0.30891506945665553,
+        "gini": 0.5888149874362492,
+        "group_auc": 0.6028794737564274,
+        "ks": 0.4894621790092738,
+        "lift_at_20_within_month": 1.544960948994289,
+        "pr_auc": 0.45447957237598746,
+        "roc_auc": 0.7944074937181246
+      },
+      "Regra de negócio": {
+        "brier": NaN,
+        "capture_at_20_within_month": 0.29159131975735064,
+        "gini": 0.4121480601563173,
+        "group_auc": 0.5642897458637138,
+        "ks": 0.32525983989729956,
+        "lift_at_20_within_month": 1.4582655088395484,
+        "pr_auc": 0.27829097695614297,
+        "roc_auc": 0.7060740300781586
+      },
+      "Só o mês": {
+        "brier": 0.08561684646809353,
+        "capture_at_20_within_month": 0.19995630216249777,
+        "gini": 0.5572552367740258,
+        "group_auc": 0.5,
+        "ks": 0.45258861302543074,
+        "lift_at_20_within_month": 1.0,
+        "pr_auc": 0.3638780062349844,
+        "roc_auc": 0.7786276183870128
+      }
+    },
+    "std_group_auc": {
+      "Dummy (taxa média)": 0.0,
+      "LightGBM ajustado": 0.005818786586316026,
+      "LightGBM padrão": 0.013610165696317945,
+      "Logística + efeito do mês": 0.01522967604390403,
+      "Regra de negócio": 0.015130690554676956,
+      "Só o mês": 0.0
+    }
+  },
+  "eda": {
+    "attempt_ratio_same_month": [
+      1.029,
+      1.128,
+      1.037,
+      0.973,
+      0.725,
+      0.769,
+      0.618,
+      0.621
+    ],
+    "avg_attempts_by_year": {
+      "2008": 3.1864474016372752,
+      "2009": 2.130265105638541,
+      "2010": 1.8851145038167938
+    },
+    "bank_cleaned_rows_dropped": 4370,
+    "base_rate": 0.11698480458295547,
+    "cap3": {
+      "calls_saved_share": 0.2954319920612055,
+      "conversion_rate_of_saved_calls": 0.019205764438183986,
+      "conversions_lost_share": 0.1340518056343354,
+      "relative_rate_of_saved_calls": 0.7364152205761065
+    },
+    "cap4": {
+      "calls_saved_share": 0.21827683344537277,
+      "conversion_rate_of_saved_calls": 0.014372135655362054,
+      "conversions_lost_share": 0.07411608999810929,
+      "relative_rate_of_saved_calls": 0.6153519803465856
+    },
+    "contacted_before_by_year": {
+      "2008": 0.033178261026362295,
+      "2009": 0.37780917776880635,
+      "2010": 0.6572519083969466
+    },
+    "conversion_by_year": {
+      "2008": 0.05052472141079736,
+      "2009": 0.17063652267527923,
+      "2010": 0.516030534351145
+    },
+    "conversion_per_call": 0.042326899068472104,
+    "cum_call_share_at_3": 0.7045680079387945,
+    "cum_conversion_share_at_3": 0.8659481943656646,
+    "dummy_accuracy": 0.8830151954170445,
+    "extra_calls_share_2008": 0.8423176942247264,
+    "hazard_first_five": [
+      0.0566,
+      0.0506,
+      0.0408,
+      0.0329,
+      0.0227
+    ],
+    "n_calls": 124956,
+    "n_periods": 30,
+    "n_rows": 45211,
+    "n_subscriptions": 5289,
+    "segment_lifts": {
+      "18–25 anos": {
+        "adjusted": 1.2167277483833454,
+        "n": 1336,
+        "pooled": 2.047453589700916,
+        "rate": 0.23952095808383234
+      },
+      "60+ anos": {
+        "adjusted": 1.0678576818158503,
+        "n": 1784,
+        "pooled": 2.8749278263457367,
+        "rate": 0.336322869955157
+      },
+      "Aposentado": {
+        "adjusted": 1.0551072109635313,
+        "n": 2264,
+        "pooled": 1.9482461432388176,
+        "rate": 0.22791519434628976
+      },
+      "Canal não registrado": {
+        "adjusted": 0.8521575701180514,
+        "n": 13020,
+        "pooled": 0.34796489482417065,
+        "rate": 0.040706605222734255
+      },
+      "Celular": {
+        "adjusted": 1.047188424107774,
+        "n": 29285,
+        "pooled": 1.2752853256601941,
+        "rate": 0.14918900460986853
+      },
+      "Com crédito imobiliário": {
+        "adjusted": 0.8730234386357182,
+        "n": 25130,
+        "pooled": 0.6582017411897159,
+        "rate": 0.07699960206923995
+      },
+      "Com empréstimo pessoal": {
+        "adjusted": 0.7896673512637089,
+        "n": 7244,
+        "pooled": 0.5711332783971066,
+        "rate": 0.06681391496410823
+      },
+      "Estudante": {
+        "adjusted": 1.0765934701680089,
+        "n": 938,
+        "pooled": 2.4514327721251132,
+        "rate": 0.2867803837953092
+      },
+      "Fracasso na campanha anterior": {
+        "adjusted": 0.6585057571447394,
+        "n": 4901,
+        "pooled": 1.0778896917908218,
+        "rate": 0.1260967149561314
+      },
+      "Saldo negativo": {
+        "adjusted": 0.8379250003308093,
+        "n": 3766,
+        "pooled": 0.4766608961153154,
+        "rate": 0.055762081784386616
+      },
+      "Sem crédito imobiliário": {
+        "adjusted": 1.091596229401597,
+        "n": 20081,
+        "pooled": 1.4277371766297715,
+        "rate": 0.1670235546038544
+      },
+      "Sucesso na campanha anterior": {
+        "adjusted": 1.6054723589882887,
+        "n": 1511,
+        "pooled": 5.532799553135205,
+        "rate": 0.6472534745201853
+      },
+      "Telefone fixo": {
+        "adjusted": 0.7879977748124225,
+        "n": 2906,
+        "pooled": 1.1472010693153876,
+        "rate": 0.13420509291121818
+      }
+    },
+    "unknown_pct": {
+      "contact": 0.28798301298356593,
+      "education": 0.04107407489327818,
+      "job": 0.006370131162770122,
+      "poutcome": 0.8174780473778506
+    }
+  },
+  "final_model": {
+    "base_rate": 0.11699657193409267,
+    "brier": 0.07991917945611436,
+    "capture_at_20_within_month": 0.29584120982986767,
+    "gini": 0.6093247854850719,
+    "group_auc": 0.6061639271192255,
+    "ks": 0.4940496891027955,
+    "lift_at_20_within_month": 1.482366270860243,
+    "n": 9043,
+    "pr_auc": 0.4654254530522709,
+    "roc_auc": 0.8046623927425359
+  },
+  "interpretation": {
+    "category_contributions": {
+      "contact = cellular": {
+        "contribuição média (log-odds)": 0.03759827343182734,
+        "multiplicador de chance": 1.03831403075126,
+        "n": 5820.0
+      },
+      "contact = telephone": {
+        "contribuição média (log-odds)": -0.09180197889597823,
+        "multiplicador de chance": 0.9122857834978644,
+        "n": 589.0
+      },
+      "contact = unknown": {
+        "contribuição média (log-odds)": -0.06910062217373338,
+        "multiplicador de chance": 0.9332327714435739,
+        "n": 2634.0
+      },
+      "education = primary": {
+        "contribuição média (log-odds)": -0.03688384526392689,
+        "multiplicador de chance": 0.9637880773973886,
+        "n": 1320.0
+      },
+      "education = secondary": {
+        "contribuição média (log-odds)": -0.007393019820767084,
+        "multiplicador de chance": 0.9926342413281612,
+        "n": 4641.0
+      },
+      "education = tertiary": {
+        "contribuição média (log-odds)": 0.03600940480604779,
+        "multiplicador de chance": 1.0366655960839448,
+        "n": 2707.0
+      },
+      "education = unknown": {
+        "contribuição média (log-odds)": -0.014586894114519567,
+        "multiplicador de chance": 0.9855189792126102,
+        "n": 375.0
+      },
+      "housing = no": {
+        "contribuição média (log-odds)": 0.07170864453301581,
+        "multiplicador de chance": 1.0743422829624432,
+        "n": 4095.0
+      },
+      "housing = yes": {
+        "contribuição média (log-odds)": -0.053173924204511315,
+        "multiplicador de chance": 0.9482150805862929,
+        "n": 4948.0
+      },
+      "loan = no": {
+        "contribuição média (log-odds)": 0.012037572518449188,
+        "multiplicador de chance": 1.0121103156852003,
+        "n": 7612.0
+      },
+      "loan = yes": {
+        "contribuição média (log-odds)": -0.06768985756992561,
+        "multiplicador de chance": 0.9345502723279326,
+        "n": 1431.0
+      },
+      "marital = divorced": {
+        "contribuição média (log-odds)": 0.13937901417101597,
+        "multiplicador de chance": 1.1495597168690301,
+        "n": 1037.0
+      },
+      "marital = married": {
+        "contribuição média (log-odds)": -0.09179219845651741,
+        "multiplicador de chance": 0.9122947060973743,
+        "n": 5443.0
+      },
+      "marital = single": {
+        "contribuição média (log-odds)": 0.13643536674320159,
+        "multiplicador de chance": 1.1461807939840598,
+        "n": 2563.0
+      },
+      "poutcome = failure": {
+        "contribuição média (log-odds)": -0.25382376360027986,
+        "multiplicador de chance": 0.7758285192238789,
+        "n": 1012.0
+      },
+      "poutcome = nonexistent": {
+        "contribuição média (log-odds)": -0.008327086949592336,
+        "multiplicador de chance": 0.991707487205053,
+        "n": 7370.0
+      },
+      "poutcome = other": {
+        "contribuição média (log-odds)": -0.08073044611819473,
+        "multiplicador de chance": 0.9224423058398956,
+        "n": 355.0
+      },
+      "poutcome = success": {
+        "contribuição média (log-odds)": 1.1025690384433315,
+        "multiplicador de chance": 3.0118937641326813,
+        "n": 306.0
+      }
+    },
+    "importance_mean_abs_shap": {
+      "age": 0.023900841242163014,
+      "balance": 0.09118747907362554,
+      "contact": 0.05030458429156032,
+      "contacted_before": 0.0,
+      "default": 0.0,
+      "education": 0.020571710489825437,
+      "housing": 0.06168883491964378,
+      "job": 0.00511978674521005,
+      "loan": 0.02084420968627654,
+      "marital": 0.10990211421618859,
+      "pdays": 0.04508665219800277,
+      "poutcome": 0.07655789020003306,
+      "previous": 0.002295998431771481
+    },
+    "odds_ratios_within_month": {
+      "18–25 anos (vs. 36–45)": 1.3934261721358403,
+      "66+ anos (vs. 36–45)": 1.123365763888434,
+      "Aposentado (vs. blue-collar)": 1.1564938628682229,
+      "Canal não registrado (vs. celular)": 0.2596225835363712,
+      "Com crédito imobiliário": 0.7219214522166714,
+      "Com empréstimo pessoal": 0.8202288136915591,
+      "Crédito em inadimplência": 1.1989855766881317,
+      "Ensino superior (vs. secundário)": 1.0822655335492377,
+      "Estudante (vs. blue-collar)": 0.8506719556325066,
+      "Fracasso na campanha anterior (vs. nunca contatado)": 0.5627310163299427,
+      "Solteiro (vs. casado)": 1.2839338272494554,
+      "Sucesso na campanha anterior (vs. nunca contatado)": 3.2954089977799397,
+      "Telefone fixo (vs. celular)": 0.6698311818155245
+    }
+  },
+  "oot": {
+    "bootstrap_group_auc": {
+      "(a) até abr/09 → mai/09–nov/10: LightGBM ajustado − Logística + efeito do mês": {
+        "ci_high": 0.006529828930513011,
+        "ci_low": -0.012971867475084511,
+        "diff": -0.003349999044959806
+      },
+      "(a) até abr/09 → mai/09–nov/10: LightGBM ajustado − Regra de negócio": {
+        "ci_high": 0.050460232315297227,
+        "ci_low": 0.006130619614075273,
+        "diff": 0.027503747358374575
+      },
+      "(a) até abr/09 → mai/09–nov/10: Logística + efeito do mês − Regra de negócio": {
+        "ci_high": 0.049232841617791845,
+        "ci_low": 0.01328608205178199,
+        "diff": 0.03085374640333438
+      },
+      "(b) até dez/09 → 2010: LightGBM ajustado − Logística + efeito do mês": {
+        "ci_high": 0.0002592060341336432,
+        "ci_low": -0.020072857980292905,
+        "diff": -0.01041323699318164
+      },
+      "(b) até dez/09 → 2010: LightGBM ajustado − Regra de negócio": {
+        "ci_high": 0.013557621718567175,
+        "ci_low": -0.01363875768007088,
+        "diff": -0.0002723784324172307
+      },
+      "(b) até dez/09 → 2010: Logística + efeito do mês − Regra de negócio": {
+        "ci_high": 0.022033066209604667,
+        "ci_low": -0.0011646849918354792,
+        "diff": 0.01014085856076441
+      }
+    },
+    "monthly_auc_cut_a": {
+      "2009-05": 0.6324271987723387,
+      "2009-06": 0.5707205016504382,
+      "2009-07": 0.5318903173965448,
+      "2009-08": 0.5236071343354808,
+      "2009-09": 0.6305159278007875,
+      "2009-10": 0.5552464909277645,
+      "2009-11": 0.6153061224489796,
+      "2009-12": 0.5804119627649039,
+      "2010-01": 0.6190587867417136,
+      "2010-02": 0.6226579099864786,
+      "2010-03": 0.6532435636856369,
+      "2010-04": 0.6079545454545454,
+      "2010-05": 0.6982835820895522,
+      "2010-06": 0.6502293577981652,
+      "2010-07": 0.6249416061494033,
+      "2010-08": 0.6796430265654649,
+      "2010-09": 0.6782636305905834,
+      "2010-10": 0.679017094017094,
+      "2010-11": 0.6609686609686609
+    },
+    "prior_shift_cut_a": {
+      "ligar para todos": {
+        "fração ligada": 1.0,
+        "resultado por 1.000 (€)": 17360.884538698567
+      },
+      "p ≥ C/V com sem ajuste (taxa média do treino)": {
+        "Brier": 0.23788101387198607,
+        "fração ligada": 0.14609389160775785,
+        "prob. média": 0.06641893671182375,
+        "resultado por 1.000 (€)": 5399.673735725938
+      },
+      "p ≥ C/V com taxa do mês anterior": {
+        "Brier": 0.16706355310755702,
+        "fração ligada": 0.8487402573862607,
+        "prob. média": 0.2912569589659078,
+        "resultado por 1.000 (€)": 16879.64473445713
+      },
+      "p ≥ C/V com taxa real do mês (referência)": {
+        "Brier": 0.15866348008058093,
+        "fração ligada": 0.7078122167844844,
+        "prob. média": 0.27360884538698566,
+        "resultado por 1.000 (€)": 18433.931484502446
+      },
+      "top 20% de cada mês": {
+        "fração ligada": 0.2,
+        "resultado por 1.000 (€)": 5764.908464745333
+      }
+    },
+    "table": {
+      "(a) até abr/09 → mai/09–nov/10 | LightGBM ajustado": {
+        "AUC dentro do mês": 0.6251295175356332,
+        "lift@20% no mês": 1.4279775331207594,
+        "n teste": 11034.0,
+        "taxa teste": 0.27360884538698566,
+        "taxa treino": 0.06641893671182374
+      },
+      "(a) até abr/09 → mai/09–nov/10 | LightGBM sem ajuste do mês": {
+        "AUC dentro do mês": 0.6351112527840986,
+        "lift@20% no mês": 1.2821979241710764,
+        "n teste": 11034.0,
+        "taxa teste": 0.27360884538698566,
+        "taxa treino": 0.06641893671182374
+      },
+      "(a) até abr/09 → mai/09–nov/10 | Logística + efeito do mês": {
+        "AUC dentro do mês": 0.628479516580593,
+        "lift@20% no mês": 1.419694600794073,
+        "n teste": 11034.0,
+        "taxa teste": 0.27360884538698566,
+        "taxa treino": 0.06641893671182374
+      },
+      "(a) até abr/09 → mai/09–nov/10 | Regra de negócio": {
+        "AUC dentro do mês": 0.5976257701772586,
+        "lift@20% no mês": 1.5051895855208335,
+        "n teste": 11034.0,
+        "taxa teste": 0.27360884538698566,
+        "taxa treino": 0.06641893671182374
+      },
+      "(b) até dez/09 → 2010 | LightGBM ajustado": {
+        "AUC dentro do mês": 0.6984890479924811,
+        "lift@20% no mês": 1.5203643434213088,
+        "n teste": 2620.0,
+        "taxa teste": 0.516030534351145,
+        "taxa treino": 0.09243736939729051
+      },
+      "(b) até dez/09 → 2010 | LightGBM sem ajuste do mês": {
+        "AUC dentro do mês": 0.6867019461588655,
+        "lift@20% no mês": 1.5092937292701827,
+        "n teste": 2620.0,
+        "taxa teste": 0.516030534351145,
+        "taxa treino": 0.09243736939729051
+      },
+      "(b) até dez/09 → 2010 | Logística + efeito do mês": {
+        "AUC dentro do mês": 0.7089022849856628,
+        "lift@20% no mês": 1.5019133198360988,
+        "n teste": 2620.0,
+        "taxa teste": 0.516030534351145,
+        "taxa treino": 0.09243736939729051
+      },
+      "(b) até dez/09 → 2010 | Regra de negócio": {
+        "AUC dentro do mês": 0.6987614264248984,
+        "lift@20% no mês": 1.5096655783223298,
+        "n teste": 2620.0,
+        "taxa teste": 0.516030534351145,
+        "taxa treino": 0.09243736939729051
+      }
+    }
+  },
+  "operating_point": {
+    "assumptions": {
+      "C_client": 10.0,
+      "V_subscription": 100.0
+    },
+    "by_year": {
+      "2008": {
+        "clientes": 22142.0,
+        "fração ligada pela regra": 0.0070905970553698855,
+        "ligar para todos (€ por 1.000)": -4892.060337819528,
+        "regra p ≥ C/V (€ por 1.000)": 154.90922229247585
+      },
+      "2009": {
+        "clientes": 11962.0,
+        "fração ligada pela regra": 0.5657080755726467,
+        "ligar para todos (€ por 1.000)": 7054.004347099148,
+        "regra p ≥ C/V (€ por 1.000)": 8629.827787995318
+      },
+      "2010": {
+        "clientes": 2064.0,
+        "fração ligada pela regra": 1.0,
+        "ligar para todos (€ por 1.000)": 41356.589147286824,
+        "regra p ≥ C/V (€ por 1.000)": 41356.589147286824
+      }
+    },
+    "oof_calibration_max_gap": 0.021085044828023508,
+    "rules": {
+      "Ligar para todos": {
+        "precision": 0.11698186241981863,
+        "recall": 1.0,
+        "resultado_por_1000_clientes_eur": 1698.1862419818624,
+        "share_called": 1.0
+      },
+      "Top 10% de cada mês": {
+        "precision": 0.20072182121043863,
+        "recall": 0.17088158827700306,
+        "resultado_por_1000_clientes_eur": 1003.0966600309666,
+        "share_called": 0.09959079849590799
+      },
+      "Top 20% de cada mês": {
+        "precision": 0.1806978676266962,
+        "recall": 0.308437721578823,
+        "resultado_por_1000_clientes_eur": 1611.3691661136916,
+        "share_called": 0.19967927449679274
+      },
+      "Top 30% de cada mês": {
+        "precision": 0.16972773419473927,
+        "recall": 0.4346490191444103,
+        "resultado_por_1000_clientes_eur": 2088.863083388631,
+        "share_called": 0.2995742092457421
+      },
+      "Top 50% de cada mês": {
+        "precision": 0.14974829894340874,
+        "recall": 0.6398014653746159,
+        "resultado_por_1000_clientes_eur": 2486.4521123645213,
+        "share_called": 0.49980645874806456
+      },
+      "p ≥ C/V = 10%": {
+        "precision": 0.313640409434802,
+        "recall": 0.6662727487591585,
+        "resultado_por_1000_clientes_eur": 5309.11302809113,
+        "share_called": 0.24850696748506967
+      }
+    },
+    "sensitivity": {
+      "V/C = 10": {
+        "fração ligada": 0.24850696748506967,
+        "ligar para todos": 169.81862419818623,
+        "limiar p*": 0.1,
+        "resultado (unidades de C por 1.000)": 530.9113028091131
+      },
+      "V/C = 20": {
+        "fração ligada": 0.64145100641451,
+        "ligar para todos": 1339.6372483963726,
+        "limiar p*": 0.05,
+        "resultado (unidades de C por 1.000)": 1435.5231143552312
+      },
+      "V/C = 5": {
+        "fração ligada": 0.14186573766865737,
+        "ligar para todos": -415.09068790090686,
+        "limiar p*": 0.2,
+        "resultado (unidades de C por 1.000)": 177.61557177615572
+      }
+    }
+  },
+  "psi": {
+    "features_2008_to_2010": {
+      "age": 0.3772980800444967,
+      "balance": 0.25794093509268684,
+      "contact": 0.7648738501202684,
+      "contacted_before": 2.510767405090365,
+      "education": 0.08142638079139054,
+      "housing": 0.5480766466671501,
+      "job": 0.6183016992698978,
+      "loan": 0.15579609673769484,
+      "marital": 0.09795243503164186,
+      "poutcome": 2.995663853088172
+    },
+    "score_2008_to_2010": 0.6301655867691698
+  },
+  "shap_month_adjustment": {
+    "age": {
+      "com ajuste do mês": 0.023900841242163014,
+      "razão": 3.781270756720227,
+      "sem ajuste do mês": 0.09037555205000375
+    },
+    "balance": {
+      "com ajuste do mês": 0.09118747907362554,
+      "razão": 1.1479887442285264,
+      "sem ajuste do mês": 0.10468219959109641
+    },
+    "contact": {
+      "com ajuste do mês": 0.05030458429156032,
+      "razão": 6.197536558306271,
+      "sem ajuste do mês": 0.3117645001973444
+    },
+    "contacted_before": {
+      "com ajuste do mês": 0.0,
+      "razão": Infinity,
+      "sem ajuste do mês": 0.0008044078663895565
+    },
+    "default": {
+      "com ajuste do mês": 0.0,
+      "razão": NaN,
+      "sem ajuste do mês": 0.0
+    },
+    "education": {
+      "com ajuste do mês": 0.020571710489825437,
+      "razão": 1.1098285154563041,
+      "sem ajuste do mês": 0.022831070913319842
+    },
+    "housing": {
+      "com ajuste do mês": 0.06168883491964378,
+      "razão": 2.7598287070072183,
+      "sem ajuste do mês": 0.17025061751306222
+    },
+    "job": {
+      "com ajuste do mês": 0.00511978674521005,
+      "razão": 1.8882622413842889,
+      "sem ajuste do mês": 0.009667499994919903
+    },
+    "loan": {
+      "com ajuste do mês": 0.02084420968627654,
+      "razão": 2.0687032680564004,
+      "sem ajuste do mês": 0.04312048469805316
+    },
+    "marital": {
+      "com ajuste do mês": 0.10990211421618859,
+      "razão": 0.8227231592765766,
+      "sem ajuste do mês": 0.09041901461911783
+    },
+    "pdays": {
+      "com ajuste do mês": 0.04508665219800277,
+      "razão": 1.2545587330733912,
+      "sem ajuste do mês": 0.05656385326004699
+    },
+    "poutcome": {
+      "com ajuste do mês": 0.07655789020003306,
+      "razão": 1.7188598894365337,
+      "sem ajuste do mês": 0.13159228668472311
+    },
+    "previous": {
+      "com ajuste do mês": 0.002295998431771481,
+      "razão": 4.6690364780508755,
+      "sem ajuste do mês": 0.010720100431488648
+    }
+  },
+  "test": {
+    "bootstrap": {
+      "LightGBM ajustado − padrão (AUC dentro do mês)": {
+        "ci_high": 0.012397731441716978,
+        "ci_low": -0.02209539651359784,
+        "diff": -0.00494888338770183
+      },
+      "LightGBM − logística (AUC dentro do mês)": {
+        "ci_high": 0.03636360002698072,
+        "ci_low": 0.006304874952803297,
+        "diff": 0.021022375944712346
+      },
+      "LightGBM − regra (AUC dentro do mês)": {
+        "ci_high": 0.08297857720273505,
+        "ci_low": 0.02986478451054268,
+        "diff": 0.05629491412103249
+      },
+      "LightGBM − regra (lift@20% no mês)": {
+        "ci_high": 0.18411077960560207,
+        "ci_low": -0.013821472739747775,
+        "diff": 0.08855521931117427
+      }
+    },
+    "confusion_matrix_top20": [
+      [
+        6498,
+        1487
+      ],
+      [
+        748,
+        310
+      ]
+    ],
+    "deciles": {
+      "1": {
+        "cum_capture": 0.16162570888468808,
+        "lift": 1.6459248709957595,
+        "rate": 0.19256756756756757
+      },
+      "10": {
+        "cum_capture": 1.0,
+        "lift": 0.5505330565209136,
+        "rate": 0.06441048034934498
+      },
+      "2": {
+        "cum_capture": 0.29300567107750475,
+        "lift": 1.307006598580463,
+        "rate": 0.15291529152915292
+      },
+      "3": {
+        "cum_capture": 0.4111531190926276,
+        "lift": 1.1871193026675069,
+        "rate": 0.1388888888888889
+      },
+      "4": {
+        "cum_capture": 0.5311909262759924,
+        "lift": 1.1941714965447394,
+        "rate": 0.1397139713971397
+      },
+      "5": {
+        "cum_capture": 0.6285444234404537,
+        "lift": 0.970636907230676,
+        "rate": 0.11356119073869901
+      },
+      "6": {
+        "cum_capture": 0.7164461247637051,
+        "lift": 0.883216761184625,
+        "rate": 0.10333333333333333
+      },
+      "7": {
+        "cum_capture": 0.7996219281663516,
+        "lift": 0.8311146852708644,
+        "rate": 0.09723756906077348
+      },
+      "8": {
+        "cum_capture": 0.8686200378071833,
+        "lift": 0.6902100724358867,
+        "rate": 0.08075221238938053
+      },
+      "9": {
+        "cum_capture": 0.944234404536862,
+        "lift": 0.7555588047916949,
+        "rate": 0.08839779005524862
+      }
+    },
+    "models": {
+      "Dummy (taxa média)": {
+        "brier": 0.10330837430613315,
+        "capture_at_20_within_month": 0.19957362471434664,
+        "gini": 0.0,
+        "group_auc": 0.5,
+        "ks": 0.0,
+        "lift_at_20_within_month": 1.0,
+        "pr_auc": 0.11699657193409267,
+        "roc_auc": 0.5
+      },
+      "LightGBM ajustado": {
+        "brier": 0.07991917945611436,
+        "capture_at_20_within_month": 0.29584120982986767,
+        "gini": 0.6093247854850719,
+        "group_auc": 0.6061639271192255,
+        "ks": 0.4940496891027955,
+        "lift_at_20_within_month": 1.482366270860243,
+        "pr_auc": 0.4654254530522709,
+        "roc_auc": 0.8046623927425359
+      },
+      "LightGBM padrão": {
+        "brier": 0.08063294908522074,
+        "capture_at_20_within_month": 0.28544423440453687,
+        "gini": 0.603032505418359,
+        "group_auc": 0.6111128105069273,
+        "ks": 0.4882982387818369,
+        "lift_at_20_within_month": 1.4302703316287328,
+        "pr_auc": 0.46166717595999485,
+        "roc_auc": 0.8015162527091795
+      },
+      "Logística + efeito do mês": {
+        "brier": 0.07946869596075526,
+        "capture_at_20_within_month": 0.30245746691871456,
+        "gini": 0.6048166872432124,
+        "group_auc": 0.5851415511745132,
+        "ks": 0.4918490837617319,
+        "lift_at_20_within_month": 1.5155182321893859,
+        "pr_auc": 0.46971733689472084,
+        "roc_auc": 0.8024083436216062
+      },
+      "Regra de negócio": {
+        "brier": NaN,
+        "capture_at_20_within_month": 0.2781679237245627,
+        "gini": 0.42780260246942214,
+        "group_auc": 0.549869012998193,
+        "ks": 0.3316806204449979,
+        "lift_at_20_within_month": 1.3938110515490687,
+        "pr_auc": 0.2846769026168949,
+        "roc_auc": 0.7139013012347111
+      },
+      "Só o mês": {
+        "brier": 0.08401501229559408,
+        "capture_at_20_within_month": 0.19957362471434664,
+        "gini": 0.577785024614915,
+        "group_auc": 0.5,
+        "ks": 0.46856724505896563,
+        "lift_at_20_within_month": 1.0,
+        "pr_auc": 0.3778623730239265,
+        "roc_auc": 0.7888925123074575
+      }
+    },
+    "top20_capture_within_month": 0.3005671077504726
+  },
+  "tuning": {
+    "best_params": {
+      "colsample_bytree": 0.6367942874131066,
+      "learning_rate": 0.022159477430054163,
+      "min_child_samples": 75,
+      "n_estimators": 111,
+      "num_leaves": 8,
+      "reg_lambda": 5.588775774926665,
+      "subsample": 0.7960184584470696,
+      "subsample_freq": 1
+    },
+    "best_value": 0.61710846768994,
+    "n_trials": 50
+  }
+}

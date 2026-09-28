@@ -1,0 +1,59 @@
+{
+  "model": "LightGBM with month offset (bank_marketing.models.PeriodOffsetClassifier)",
+  "trained_at": "2026-09-25T18:12:17+00:00",
+  "features": [
+    "job",
+    "marital",
+    "education",
+    "contact",
+    "poutcome",
+    "default",
+    "housing",
+    "loan",
+    "age",
+    "balance",
+    "pdays",
+    "previous",
+    "contacted_before"
+  ],
+  "excluded": [
+    "duration",
+    "campaign",
+    "day",
+    "month"
+  ],
+  "params": {
+    "learning_rate": 0.022159477430054163,
+    "n_estimators": 111,
+    "num_leaves": 8,
+    "min_child_samples": 75,
+    "subsample": 0.7960184584470696,
+    "colsample_bytree": 0.6367942874131066,
+    "reg_lambda": 5.588775774926665,
+    "subsample_freq": 1
+  },
+  "seed": 42,
+  "n_train": 36168,
+  "n_test": 9043,
+  "train_base_rate": 0.11698186241981863,
+  "data_sha256": "d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d",
+  "versions": {
+    "python": "3.12.13",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3"
+  },
+  "holdout_metrics": {
+    "group_auc": 0.6061639271192255,
+    "lift_at_20_within_month": 1.482366270860243,
+    "capture_at_20_within_month": 0.29584120982986767,
+    "roc_auc": 0.8046623927425359,
+    "gini": 0.6093247854850719,
+    "ks": 0.4940496891027955,
+    "pr_auc": 0.4654254530522709,
+    "brier": 0.07991917945611436,
+    "base_rate": 0.11699657193409267,
+    "n": 9043
+  }
+}
