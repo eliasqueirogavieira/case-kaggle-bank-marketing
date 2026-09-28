@@ -5,8 +5,7 @@ mai/2008–nov/2010). O objetivo é ordenar os clientes de uma campanha pela cha
 usando só informação disponível **antes** da ligação, e transformar isso em decisões: quem ligar, quantos ligar e
 quantas vezes insistir.
 
-**Apresentação:** [slides em PDF](<docs/Bank Marketing · Modelo de propensão pré-ligação.pdf>) (30 min + 15 min
-de discussão).
+**Apresentação:** [slides em PDF](<docs/Bank Marketing · Modelo de propensão pré-ligação.pdf>) 
 
 ## Resumo
 
