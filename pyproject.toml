@@ -1,0 +1,38 @@
+[project]
+name = "bank-marketing"
+version = "0.1.0"
+description = "Modelo de propensão a depósito a prazo (UCI Bank Marketing) — case de modelagem"
+authors = [
+    { name = "eliasqueirogavieira" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "joblib>=1.6.0",
+    "jupyterlab>=4.6.4",
+    "lightgbm>=4.6",
+    "matplotlib>=3.11.2",
+    "optuna>=5.0.0",
+    "pandas>=3.0.6",
+    "scikit-learn>=1.6",
+    "seaborn>=0.13.2",
+    "shap>=0.52.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.16,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "jupytext>=1.19.5",
+    "nbconvert>=7.17.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "error::FutureWarning",
+]

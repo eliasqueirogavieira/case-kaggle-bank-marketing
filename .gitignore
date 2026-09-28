@@ -1,0 +1,14 @@
+# Python / ambiente
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE / SO
+.idea/
+.vscode/
+.DS_Store
+
+# Material local (enunciado do case, notebook de referência, anotações)
+_local/
