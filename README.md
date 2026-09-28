@@ -1,9 +1,12 @@
-# Quem ligar primeiro? Propensão a depósito a prazo
+# Bank Marketing (UCI): modelo de propensão pré-ligação
 
 Case de modelagem sobre o dataset **UCI Bank Marketing** (campanhas de telemarketing de um banco português,
 mai/2008–nov/2010). O objetivo é ordenar os clientes de uma campanha pela chance de aderir a um depósito a prazo,
 usando só informação disponível **antes** da ligação, e transformar isso em decisões: quem ligar, quantos ligar e
 quantas vezes insistir.
+
+**Apresentação:** [slides em PDF](<docs/Bank Marketing · Modelo de propensão pré-ligação.pdf>) (30 min + 15 min
+de discussão).
 
 ## Resumo
 
@@ -33,6 +36,7 @@ Todos os números vêm de [`reports/metrics.json`](reports/metrics.json), gerado
 
 ```
 ├── data/raw/                  dados originais (ver data/README.md)
+├── docs/                      slides da apresentação (PDF)
 ├── notebooks/
 │   ├── 01_eda.ipynb                     análise exploratória, ausentes, época, tentativas, vazamento
 │   ├── 02_modelagem.ipynb               pré-processamento, métricas, CV, Optuna, ponto de operação, teste, ablação
